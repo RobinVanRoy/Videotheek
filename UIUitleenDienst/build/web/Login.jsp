@@ -33,7 +33,7 @@
             <input type="submit" class="Login" value="Login">
         </form><br>
         <label name="Error" style="color: red; visibility: 
-               <% if(null == session.getAttribute("Error")){%>
+               <% if(null == session.getAttribute("Error") || "".equals(session.getAttribute("Error"))){%>
                 hidden
                <%} else{%>
                 visible

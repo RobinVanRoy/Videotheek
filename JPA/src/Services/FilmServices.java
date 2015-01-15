@@ -10,6 +10,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.LockModeType;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
@@ -56,6 +57,18 @@ public class FilmServices {
         return list;
     }
     
+    public static List<Film> GetByUitgeleend(){
+        
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAPU");
+        EntityManager em = emf.createEntityManager();
+        
+        Query q = em.createNamedQuery("Film.findByUitgeleend", Film.class).setParameter("uitgeleend", false);
+        List<Film> list = q.getResultList();
+        em.close();
+        emf.close();
+        return list;
+    }
+    
     public static void Delete(int Id){
         
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAPU");
@@ -81,7 +94,7 @@ public class FilmServices {
         Film film = (Film)q.getSingleResult();
         film.setUitgeleend(b);
         trans.begin();
-        em.persist(film);
+        em.persist(film);        
         trans.commit();
         em.close();
         emf.close();

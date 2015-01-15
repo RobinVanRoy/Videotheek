@@ -102,5 +102,15 @@ public class FilmServicesTest {
         Film result = FilmServices.Lenen(Id, b);
         assertTrue(result.getUitgeleend() == true);
     }
+
+    /**
+     * Test of GetByUitgeleend method, of class FilmServices.
+     */
+    @Test
+    public void testGetByUitgeleend() {
+        System.out.println("GetByUitgeleend");
+        List<Film> result = FilmServices.GetByUitgeleend();
+        assertTrue(result.size()>0);
+    }
     
 }

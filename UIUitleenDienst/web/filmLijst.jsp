@@ -80,18 +80,9 @@
                 <td class="jaar"><%= film.getJaar() %></td>
                 <td class="acteurs"><%= film.getActeurs() %></td>
                 <td class="button">
-                    <form method="POST" action="Uitlenen?id=<%= film.getFilmID() %>&bool=<%= film.getUitgeleend()%>" role="form">
+                    <form method="POST" action="Uitlenen?id=<%= film.getFilmID() %>&bool=<%= film.getUitgeleend()%>" role="form">                        
                         <input id="btnLenen" type="submit" name="btnLenen" class="btn btn-primary btn-sm" 
-                               value="<%
-                               if(film.getUitgeleend()== false)
-                               {
-                                   %>Lenen<%
-                               }
-                               else
-                               {
-                                   %>Uitgeleend<%
-                               }
-                                   %>">                        
+                               value="<%if(film.getUitgeleend()== false){%>Lenen<%}else{%>Uitgeleend<%}%>">
                     </form>
                 </td>
             </tr>

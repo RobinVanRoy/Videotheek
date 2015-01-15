@@ -34,9 +34,9 @@ public class FilmController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        try{
             
-            FilmLijstVM vm = new FilmLijstVM(FilmServices.GetAll());
+            FilmLijstVM vm = new FilmLijstVM(FilmServices.GetByUitgeleend());
             HttpSession session = request.getSession();
             session.setAttribute("ViewModel", vm);
         
