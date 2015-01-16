@@ -26,14 +26,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "tbl_films")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Film.findAll", query = "SELECT f FROM Film f"),
+    @NamedQuery(name = "Film.findAll", query = "SELECT f FROM Film f ORDER BY f.titel"),
     @NamedQuery(name = "Film.findByFilmID", query = "SELECT f FROM Film f WHERE f.filmID = :filmID"),
-    @NamedQuery(name = "Film.findByTitel", query = "SELECT f FROM Film f WHERE f.titel = :titel"),
-    @NamedQuery(name = "Film.findByGenre", query = "SELECT f FROM Film f WHERE f.genre = :genre"),
+    @NamedQuery(name = "Film.findByTitel", query = "SELECT f FROM Film f WHERE f.titel = :titel ORDER BY f.titel"),
+    @NamedQuery(name = "Film.findByGenre", query = "SELECT f FROM Film f WHERE f.genre = :genre ORDER BY f.titel"),
     @NamedQuery(name = "Film.findByOmschrijving", query = "SELECT f FROM Film f WHERE f.omschrijving = :omschrijving"),
-    @NamedQuery(name = "Film.findByJaar", query = "SELECT f FROM Film f WHERE f.jaar = :jaar"),
-    @NamedQuery(name = "Film.findByActeurs", query = "SELECT f FROM Film f WHERE f.acteurs = :acteurs"),
-    @NamedQuery(name = "Film.findByUitgeleend", query = "SELECT f FROM Film f WHERE f.uitgeleend = :uitgeleend")})
+    @NamedQuery(name = "Film.findByJaar", query = "SELECT f FROM Film f WHERE f.jaar = :jaar ORDER BY f.titel"),
+    @NamedQuery(name = "Film.findByActeurs", query = "SELECT f FROM Film f WHERE f.acteurs = :acteurs ORDER BY f.titel"),
+    @NamedQuery(name = "Film.findByUitgeleend", query = "SELECT f FROM Film f WHERE f.uitgeleend = :uitgeleend ORDER BY f.titel")})
 public class Film implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

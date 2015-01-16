@@ -92,6 +92,9 @@
         </div>
         
         <div class="details">
+            <form role="Form" method="POST" action="LogOut">
+                <input type="submit" name="btnLogOut" class="btn" value="Log Out">
+            </form>
             <table>
                 <tr>
                     <td><label>Titel:</label></td>
