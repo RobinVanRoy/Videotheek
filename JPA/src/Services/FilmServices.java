@@ -57,12 +57,12 @@ public class FilmServices {
         return list;
     }
     
-    public static List<Film> GetByUitgeleend(){
+    public static List<Film> GetByUitgeleend(boolean b){
         
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPAPU");
         EntityManager em = emf.createEntityManager();
         
-        Query q = em.createNamedQuery("Film.findByUitgeleend", Film.class).setParameter("uitgeleend", false);
+        Query q = em.createNamedQuery("Film.findByUitgeleend", Film.class).setParameter("uitgeleend", b);
         List<Film> list = q.getResultList();
         em.close();
         emf.close();

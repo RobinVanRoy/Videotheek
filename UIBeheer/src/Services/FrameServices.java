@@ -26,17 +26,21 @@ public class FrameServices {
     {
         JFrame f = null;
         if(s.equalsIgnoreCase("Film toevoegen")){
-        f = new AddFilmFrame();
+            f = new AddFilmFrame();
         }
         if(s.equalsIgnoreCase("Genre toevoegen")){
-        f = new AddGenreFrame();
+            f = new AddGenreFrame();
         }
         if(s.equalsIgnoreCase("Acteur/Actrice toevoegen")){
-        f = new AddActeurFrame();
+            f = new AddActeurFrame();
         }
         if(s.equalsIgnoreCase("Film verwijderen")){
-        f = new DeleteFilmFrame();
-        }        
+            f = new DeleteFilmFrame();
+        } 
+        if(s.equalsIgnoreCase("Geleende film toevoegen")){
+            f = new GeleendeFrame();
+        }
+        
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
         frame.dispose();

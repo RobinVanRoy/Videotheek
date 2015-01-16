@@ -31,9 +31,10 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnFilmToevoegen" max="32767" attributes="0"/>
-                          <Component id="btnFilmVerwijderen" pref="130" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="btnGeleendeFilm" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnFilmToevoegen" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnFilmVerwijderen" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -42,7 +43,7 @@
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
                       <Component id="btnSluiten" min="-2" pref="75" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -63,9 +64,11 @@
                   <Component id="btnActeurToevoegen" pref="35" max="32767" attributes="0"/>
                   <Component id="btnFilmVerwijderen" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnGeleendeFilm" min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
               <Component id="btnSluiten" min="-2" pref="35" max="-2" attributes="0"/>
-              <EmptySpace pref="20" max="32767" attributes="0"/>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -109,6 +112,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSluitenActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnGeleendeFilm">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Geleende film toevoegen"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGeleendeFilmActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

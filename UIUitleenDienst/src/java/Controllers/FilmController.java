@@ -36,7 +36,7 @@ public class FilmController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try{
             
-            FilmLijstVM vm = new FilmLijstVM(FilmServices.GetByUitgeleend());
+            FilmLijstVM vm = new FilmLijstVM(FilmServices.GetByUitgeleend(false));
             HttpSession session = request.getSession();
             session.setAttribute("ViewModel", vm);
         

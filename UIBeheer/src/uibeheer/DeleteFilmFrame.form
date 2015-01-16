@@ -42,7 +42,7 @@
                   <Group type="102" attributes="0">
                       <Component id="jLabel1" min="-2" pref="32" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="txtTitel" max="32767" attributes="0"/>
+                      <Component id="txtTitel" min="-2" pref="190" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnZoek" min="-2" pref="63" max="-2" attributes="0"/>
                   </Group>

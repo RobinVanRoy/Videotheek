@@ -37,6 +37,7 @@ public class StartFrame extends javax.swing.JFrame {
         btnGenreToevoegen = new javax.swing.JButton();
         btnFilmVerwijderen = new javax.swing.JButton();
         btnSluiten = new javax.swing.JButton();
+        btnGeleendeFilm = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(700, 350, 0, 0));
@@ -77,6 +78,13 @@ public class StartFrame extends javax.swing.JFrame {
             }
         });
 
+        btnGeleendeFilm.setText("Geleende film toevoegen");
+        btnGeleendeFilm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGeleendeFilmActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -85,15 +93,16 @@ public class StartFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnFilmToevoegen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnFilmVerwijderen, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnGeleendeFilm, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnFilmToevoegen, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnFilmVerwijderen, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnActeurToevoegen, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
                             .addComponent(btnGenreToevoegen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(116, 116, 116)
+                        .addGap(132, 132, 132)
                         .addComponent(btnSluiten, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -108,9 +117,11 @@ public class StartFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnActeurToevoegen, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                     .addComponent(btnFilmVerwijderen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
+                .addComponent(btnGeleendeFilm, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
                 .addComponent(btnSluiten, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
@@ -139,6 +150,11 @@ public class StartFrame extends javax.swing.JFrame {
     private void btnSluitenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSluitenActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnSluitenActionPerformed
+
+    private void btnGeleendeFilmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGeleendeFilmActionPerformed
+        actionPerformed(evt);
+        FrameServices.GoTo(s, this);
+    }//GEN-LAST:event_btnGeleendeFilmActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,6 +195,7 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnActeurToevoegen;
     private javax.swing.JButton btnFilmToevoegen;
     private javax.swing.JButton btnFilmVerwijderen;
+    private javax.swing.JButton btnGeleendeFilm;
     private javax.swing.JButton btnGenreToevoegen;
     private javax.swing.JButton btnSluiten;
     // End of variables declaration//GEN-END:variables

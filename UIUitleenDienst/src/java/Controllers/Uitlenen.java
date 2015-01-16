@@ -46,7 +46,7 @@ public class Uitlenen extends HttpServlet {
         try {
             HttpSession session = request.getSession();
             session.setAttribute("Lock", "1");
-            List<Film> films = FilmServices.GetByUitgeleend();
+            List<Film> films = FilmServices.GetByUitgeleend(false);
             int id = Integer.parseInt(request.getParameter("id"));
             Boolean b = Boolean.parseBoolean(request.getParameter("bool"));
             if(b==false)
