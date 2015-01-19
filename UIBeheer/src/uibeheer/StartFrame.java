@@ -21,6 +21,7 @@ public class StartFrame extends javax.swing.JFrame {
     private String s = "";
     public StartFrame() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

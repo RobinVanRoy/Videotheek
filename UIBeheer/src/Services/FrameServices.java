@@ -19,6 +19,7 @@ public class FrameServices {
         StartFrame s = new StartFrame();
         s.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         s.setVisible(true);
+        s.setLocationRelativeTo(null);
         frame.dispose();
     }
     
@@ -43,6 +44,7 @@ public class FrameServices {
         
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
+        f.setLocationRelativeTo(null);
         frame.dispose();
         
     }
