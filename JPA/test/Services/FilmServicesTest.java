@@ -109,7 +109,7 @@ public class FilmServicesTest {
     @Test
     public void testGetByUitgeleend() {
         System.out.println("GetByUitgeleend");
-        List<Film> result = FilmServices.GetByUitgeleend();
+        List<Film> result = FilmServices.GetByUitgeleend(false);
         assertTrue(result.size()>0);
     }
     
