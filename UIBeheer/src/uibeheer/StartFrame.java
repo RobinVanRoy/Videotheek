@@ -41,7 +41,9 @@ public class StartFrame extends javax.swing.JFrame {
         btnGeleendeFilm = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 153, 255));
         setBounds(new java.awt.Rectangle(700, 350, 0, 0));
+        setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         setResizable(false);
 
         btnFilmToevoegen.setText("Film Toevoegen");
