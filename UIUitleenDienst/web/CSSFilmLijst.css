@@ -9,12 +9,57 @@ and open the template in the editor.
 */
 
 
-    .lijst {
-        position: absolute;
-        left: 10px;
-        width: 50%;
-        top: 35%;
+    .body{
+        background-image:  url("Images/teslaSpoel.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
     }
+    .h1 {
+        text-align: center;
+        color: aqua;
+    }
+    .left{
+        position: relative;
+        float: left;
+        width: 45%;
+        left: 20px;
+    }
+    .right{
+        position: relative;
+        float: right;
+        width: 45%;
+        right: 20px;
+        overflow: hidden;
+    }
+    
+    //Elementen aan de linkerkant van de pagina
+    .zoeken {        
+        padding-bottom: 20px;
+    }
+    .details {
+        padding-top: 20px;
+    }
+    .labelZoeken {
+        font-size: 120%;
+        color: red;
+        width: 120px;
+        padding-bottom: 5px;
+    }
+    .error {
+        color: red;
+    }
+    .inhoud{
+        vertical-align: top;
+        color: red;
+    }
+    h3{
+        color: violet;
+    }
+    
+    //Elementen aan de rechterkant van de pagina
+    .lijst {        
+        padding-top: 20px;
+    }    
     .titel {
         width: 15%;
     }
@@ -30,36 +75,10 @@ and open the template in the editor.
     .button {
         width: 5%;
     }
-    .zoeken {
-        position: absolute;
-        left:  10px;
-        width: 50%;
-    }
-    .zoekButton {
-        width: 10%;
-    }
-    .titelZoeken {
-        position: absolute;
-        left: 50%;
-    }
-    .labelZoeken {
-        font-size: 120%;
-    }
-    .h1 {
-        text-align: center;
-    }
-    .error {
+    .table{
         color: red;
     }
-    .details {
-        position: absolute;
-        right:   0px;
-        width: 40%;
-        top: 10%;
+    .link{
+        color: cyan;
     }
-    td{
-        vertical-align: middle;
-    }
-    .inhoud{
-        vertical-align: top;
-    }
+    
