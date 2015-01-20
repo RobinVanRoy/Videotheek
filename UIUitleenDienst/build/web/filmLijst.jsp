@@ -101,8 +101,8 @@
                         <th hidden="true">Id</th>
                         <th>Titel</th>
                         <th>Genre</th>
-                        <th>Jaar</th>
-                        <th>Acteurs/Actrices</th>
+                        <!--<th>Jaar</th>
+                        <th>Acteurs/Actrices</th>-->
                         <th></th>
                     </tr>
                     <%
@@ -113,8 +113,8 @@
                         <td hidden="true"><%= film.getFilmID() %></td>
                         <td class="titel"><a class="link" href="/UIUitleenDienst/DetailsController?Id=<%=film.getFilmID()%>"><%= film.getTitel() %></a></td>
                         <td class="genre"><%= film.getGenre() %></td>
-                        <td class="jaar"><%= film.getJaar() %></td>
-                        <td class="acteurs"><%= film.getActeurs() %></td>
+                        <!--<td class="jaar"><%= film.getJaar() %></td>
+                        <td class="acteurs"><%= film.getActeurs() %></td>-->
                         <td class="button">
                             <form method="POST" action="Uitlenen?id=<%= film.getFilmID() %>&bool=<%= film.getUitgeleend()%>" role="form">                        
                                 <input id="btnLenen" type="submit" name="btnLenen" class="btn btn-primary btn-sm" 

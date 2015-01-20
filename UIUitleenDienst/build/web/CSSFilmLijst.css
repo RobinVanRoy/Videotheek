@@ -10,13 +10,14 @@ and open the template in the editor.
 
 
     .body{
-        background-image:  url("Images/teslaSpoel.jpg");
+        background-image:  url("Images/Clapperboard.jpg");
         background-repeat: no-repeat;
         background-size: 100% 100%;
+       
     }
     .h1 {
         text-align: center;
-        color: aqua;
+        color: navy;
     }
     .left{
         position: relative;
@@ -27,7 +28,7 @@ and open the template in the editor.
     .right{
         position: relative;
         float: right;
-        width: 45%;
+        width: 25%;
         right: 20px;
         overflow: hidden;
     }
@@ -41,7 +42,7 @@ and open the template in the editor.
     }
     .labelZoeken {
         font-size: 120%;
-        color: red;
+        color: burlywood;
         width: 120px;
         padding-bottom: 5px;
     }
@@ -50,10 +51,10 @@ and open the template in the editor.
     }
     .inhoud{
         vertical-align: top;
-        color: red;
+        color: burlywood;
     }
     h3{
-        color: violet;
+        color: green;
     }
     
     //Elementen aan de rechterkant van de pagina
@@ -76,9 +77,9 @@ and open the template in the editor.
         width: 5%;
     }
     .table{
-        color: red;
+        color: darkblue;
     }
     .link{
-        color: cyan;
+        color: chocolate;
     }
     
