@@ -9,13 +9,9 @@ import DAL.Film;
 import Services.FilmServices;
 import ViewModels.FilmLijstVM;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.concurrent.locks.Lock;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -38,6 +34,8 @@ public class Uitlenen extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    /* Dit zet de film op uitgeleend maar de film blijft aanwezig in de lijst */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -45,7 +43,6 @@ public class Uitlenen extends HttpServlet {
         
         try {
             HttpSession session = request.getSession();
-            session.setAttribute("Lock", "1");
             List<Film> films = FilmServices.GetByUitgeleend(false);
             int id = Integer.parseInt(request.getParameter("id"));
             Boolean b = Boolean.parseBoolean(request.getParameter("bool"));
@@ -63,6 +60,7 @@ public class Uitlenen extends HttpServlet {
             }
             Film film = FilmServices.Lenen(id, b);
             films.add(film);
+            
             Collections.sort(films, new Comparator(){
 
                 @Override

@@ -9,7 +9,6 @@ import DAL.Film;
 import Services.FilmServices;
 import ViewModels.FilmLijstVM;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -34,6 +33,8 @@ public class ZoekByActeur extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    /* Handelt het zoeken naar een acteur/actrice en geeft een lijst terug */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");

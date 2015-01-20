@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+/* Dit zijn methodes om terug te gaan naar het start frame of een ander frame te openen */
 package Services;
 
 import javax.swing.JFrame;
@@ -42,10 +44,13 @@ public class FrameServices {
             f = new GeleendeFrame();
         }
         
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.setVisible(true);
-        f.setLocationRelativeTo(null);
-        frame.dispose();
+        if(f != null){
+            f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            f.setVisible(true);
+            f.setLocationRelativeTo(null);
+            frame.dispose();
+        }
+        else return;
         
     }
     

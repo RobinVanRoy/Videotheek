@@ -25,9 +25,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Table(name = "tbl_acteurs")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Acteur.findAll", query = "SELECT a FROM Acteur a"),
+    @NamedQuery(name = "Acteur.findAll", query = "SELECT a FROM Acteur a ORDER BY a.naam"),
     @NamedQuery(name = "Acteur.findByActeurID", query = "SELECT a FROM Acteur a WHERE a.acteurID = :acteurID"),
-    @NamedQuery(name = "Acteur.findByNaam", query = "SELECT a FROM Acteur a WHERE a.naam = :naam")})
+    @NamedQuery(name = "Acteur.findByNaam", query = "SELECT a FROM Acteur a WHERE a.naam = :naam ORDER BY a.naam")})
 public class Acteur implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id

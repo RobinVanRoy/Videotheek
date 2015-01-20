@@ -3,6 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+/* Deze klasse is van het internet gehaald. Het zorgt ervoor dat als je iets intyped in de comboboxen
+van acteurs dat deze de best mogelijk keuze selecteerd */
 package Services;
 
 import java.awt.event.*;

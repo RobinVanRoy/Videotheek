@@ -122,9 +122,9 @@ public class StartFrame extends javax.swing.JFrame {
                     .addComponent(btnFilmVerwijderen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(btnGeleendeFilm, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(18, 18, 18)
                 .addComponent(btnSluiten, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
@@ -202,7 +202,9 @@ public class StartFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnGenreToevoegen;
     private javax.swing.JButton btnSluiten;
     // End of variables declaration//GEN-END:variables
-
+    
+    /* Dit geeft de command string weer van de action.
+    Of de tekst die op een knop staat*/
     private void actionPerformed(ActionEvent evt) {
         s = "";
         s = ((JButton) evt.getSource()).getActionCommand();
