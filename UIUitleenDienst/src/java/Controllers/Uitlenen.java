@@ -38,38 +38,41 @@ public class Uitlenen extends HttpServlet {
     /* Dit zet de film op uitgeleend maar de film blijft aanwezig in de lijst */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        
+        response.setContentType("text/html;charset=UTF-8");        
         
         try {
-            HttpSession session = request.getSession();
+            
             List<Film> films = FilmServices.GetByUitgeleend(false);
             int id = Integer.parseInt(request.getParameter("id"));
             Boolean b = Boolean.parseBoolean(request.getParameter("bool"));
-            if(b==false)
-            {
-                Film f = FilmServices.Lenen(id, b);
-                films.remove(f);
-                b=true;
-                
-            }
-            else if(b==true)
-            {
-                b=false;
-                
-            }
-            Film film = FilmServices.Lenen(id, b);
-            films.add(film);
-            
-            Collections.sort(films, new Comparator(){
+            Film check = FilmServices.GetById(id);
+            if(check.getUitgeleend()== true){
+                if(b==false)
+                {
+                    Film f = FilmServices.Lenen(id, b);
+                    films.remove(f);
+                    b=true;
 
-                @Override
-                public int compare(Object o1, Object o2) {
-                    Film f1 = (Film)o1;
-                    Film f2 = (Film)o2;
-                    return f1.getTitel().toUpperCase().compareTo(f2.getTitel().toUpperCase());
                 }
-            });
+                else if(b==true)
+                {
+                    b=false;
+
+                }
+                Film film = FilmServices.Lenen(id, b);
+                films.add(film);
+
+                Collections.sort(films, new Comparator(){
+
+                    @Override
+                    public int compare(Object o1, Object o2) {
+                        Film f1 = (Film)o1;
+                        Film f2 = (Film)o2;
+                        return f1.getTitel().toUpperCase().compareTo(f2.getTitel().toUpperCase());
+                    }
+                });
+            }
+            HttpSession session = request.getSession();
             FilmLijstVM vm = new FilmLijstVM(films);
             session.setAttribute("ViewModel", vm);
         
