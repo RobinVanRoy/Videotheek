@@ -103,7 +103,9 @@ public class AddFilmFrame extends javax.swing.JFrame {
         jLabel5.setText("Inhoud:");
 
         txtInhoud.setColumns(20);
+        txtInhoud.setLineWrap(true);
         txtInhoud.setRows(5);
+        txtInhoud.setWrapStyleWord(true);
         jScrollPane1.setViewportView(txtInhoud);
 
         btnSaveClose.setText("<html>Save &<br>Close<html>");
