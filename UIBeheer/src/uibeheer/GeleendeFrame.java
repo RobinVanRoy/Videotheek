@@ -153,13 +153,16 @@ public class GeleendeFrame extends javax.swing.JFrame {
         }
         else lblError.setText("Er moet een titel worden ingevuld of film staat op te lenen!");
         
-        lstFilms.setModel(model);
+        if(!model.isEmpty()){
+           lstFilms.setModel(model); 
+        }
+        else lblError.setText("Geen film gevonden!");
     }//GEN-LAST:event_btnZoekActionPerformed
 
     private void btnTerugZettenNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTerugZettenNewActionPerformed
-        if(lstFilms.getSelectedIndex()>0){
+        if(lstFilms.getSelectedIndex()>=0){
             SetUitgeleendFalse();
-            FrameServices.GoToStart(this);
+            ClearAll();            
         }
         else lblError.setText("Je moet een film selecteren in de lijst!");
     }//GEN-LAST:event_btnTerugZettenNewActionPerformed
@@ -174,9 +177,9 @@ public class GeleendeFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_lstFilmsValueChanged
 
     private void btnTerugZettenCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTerugZettenCloseActionPerformed
-        if(lstFilms.getSelectedIndex()>0){
+        if(lstFilms.getSelectedIndex()>=0){
             SetUitgeleendFalse();
-            ClearAll();
+            FrameServices.GoToStart(this);
         }
         else lblError.setText("Je moet een film selecteren in de lijst!");
     }//GEN-LAST:event_btnTerugZettenCloseActionPerformed

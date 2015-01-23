@@ -159,7 +159,7 @@ public class DeleteFilmFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnZoekActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        if(lstFilms.getSelectedIndex()>0){
+        if(lstFilms.getSelectedIndex()>=0){
             Delete();
             ClearAll();
         }
@@ -167,7 +167,7 @@ public class DeleteFilmFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnDeleteCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCloseActionPerformed
-        if(lstFilms.getSelectedIndex()>0){
+        if(lstFilms.getSelectedIndex()>=0){
             Delete();
             FrameServices.GoToStart(this);
         }

@@ -39,9 +39,9 @@ public class DetailsController extends HttpServlet {
             
             HttpSession session = request.getSession();
             Integer Id = Integer.parseInt(request.getParameter("Id"));
-            System.out.println("Id: "+Id);
+//            System.out.println("Id: "+Id);
             Film film = FilmServices.GetById(Id);
-            System.out.println("Titel: "+film.getTitel());
+//            System.out.println("Titel: "+film.getTitel());
             
             session.setAttribute("Titel",film.getTitel());
             session.setAttribute("Genre",film.getGenre());

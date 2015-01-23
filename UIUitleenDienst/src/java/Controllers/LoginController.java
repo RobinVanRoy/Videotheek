@@ -50,32 +50,33 @@ public class LoginController extends HttpServlet {
             String error = "";
             session.setAttribute("FirstLoad", "1");
             
-            if(!"".equals(userName)){            
-                   
-                
+            if(!"".equals(userName)){              
             
                 Login login = LoginServices.GetByUserName(userName);
-                if(!"".equals(passWord)){
-                    if(login.getPassword().equals(passWord)){
-                        
-                        session.removeAttribute("Error");
-                        session.setAttribute("FirstLoad", "0");
-                        RequestDispatcher dispatcher = request.getRequestDispatcher("/FilmController");
-                        dispatcher.forward(request, response); 
+                if(login!=null){
+                    if(!"".equals(passWord)){
+                        if(login.getPassword().equals(passWord)){
+
+                            session.removeAttribute("Error");
+                            session.setAttribute("FirstLoad", "0");
+                            RequestDispatcher dispatcher = request.getRequestDispatcher("/FilmController");
+                            dispatcher.forward(request, response); 
+                        }
+                        else {
+
+                            error = "Verkeerd paswoord ingevuld!";
+                        }
                     }
                     else {
-                   
-                        error = "Verkeerd paswoord ingevuld!";
+                        error = "Paswoord is niet ingevuld!";
+                    }
+
+
+                    if(session.getAttribute("FirstLoad").equals("1")) {
+                        session.setAttribute("UserName", userName);
                     }
                 }
-                else {
-                    error = "Paswoord is niet ingevuld!";
-                }
-            
-                if(session.getAttribute("FirstLoad").equals("1")) {
-                    session.setAttribute("UserName", userName);
-                } 
-            
+                else error = "Verkeerde username!";           
             }
             else {            
                 error = "Username is niet ingevuld!";               

@@ -41,15 +41,26 @@ public class Uitlenen extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");        
         
         try {
-            
-            List<Film> films = FilmServices.GetByUitgeleend(false);
+            HttpSession session = request.getSession();
             int id = Integer.parseInt(request.getParameter("id"));
-            Boolean b = Boolean.parseBoolean(request.getParameter("bool"));
             Film check = FilmServices.GetById(id);
-            if(check.getUitgeleend()== true){
+            
+            /* De volgende if heb ik niet kunnen testen */
+            if(check.getUitgeleend()==true && !session.equals(request.getSession())){
+                
+                String error = "Film is al uitgeleend!";
+                session.setAttribute("Error", error);
+                RequestDispatcher dispatcher = request.getRequestDispatcher("filmLijst.jsp");
+                dispatcher.forward(request, response);
+            }
+            
+            List<Film> films = FilmServices.GetByUitgeleend(false);            
+            Boolean b = Boolean.parseBoolean(request.getParameter("bool"));
+            
                 if(b==false)
                 {
                     Film f = FilmServices.Lenen(id, b);
+                    
                     films.remove(f);
                     b=true;
 
@@ -70,9 +81,8 @@ public class Uitlenen extends HttpServlet {
                         Film f2 = (Film)o2;
                         return f1.getTitel().toUpperCase().compareTo(f2.getTitel().toUpperCase());
                     }
-                });
-            }
-            HttpSession session = request.getSession();
+                });                        
+            
             FilmLijstVM vm = new FilmLijstVM(films);
             session.setAttribute("ViewModel", vm);
         
